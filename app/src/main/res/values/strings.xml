@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="otel">Отель</string>
+    <string name="_5">5 Превосходно</string>
+    <string name="steigenberger_makadi">Steigenberger Makadi</string>
+    <string name="_134_673">от 134 673 ₽</string>
+    <string name="за_тур_с_перелётом">за тур с перелётом</string>
+    <string name="madinat_makadi_safaga_road_makadi_bay">Madinat Makadi, Safaga Road, Makadi Bay, Египет</string>
+    <string name="об_отеле">Об отеле</string>
+</resources>

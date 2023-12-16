@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="section_colors">#000000</color>
+    <color name="secondary_text">#828796</color>
+    <color name="secondary_text_background1">#FBFBFC</color>
+    <color name="secondary_text_background2">#F6F6F9</color>
+    <color name="rating_background">#33FFC700</color>
+    <color name="rating_color">#FFA800</color>
+    <color name="blue_notes">#0D72FF</color>
+    <color name="blue_notes_background">#1A0D72FF</color>
+</resources>
