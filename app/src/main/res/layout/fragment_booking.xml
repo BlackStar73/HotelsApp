@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E9EC"
+    tools:context=".presentation.booking.BookingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_panel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/to_rooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/booking"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/short_info_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/top_panel">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rate_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rate_background"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_2sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/hotel_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_2sdp"
+                    android:fontFamily="@font/sfprodisplay_medium"
+                    android:text="@string/_5"
+                    android:textColor="#FFA800"
+                    android:textSize="@dimen/_12ssp"
+                    app:drawableStartCompat="@drawable/hotel_rate_star"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/rate_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:fontFamily="@font/sfprodisplay_medium"
+                    android:text="@string/rate_content"
+                    android:textColor="#FFA800"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/hotel_rate"
+                    app:layout_constraintLeft_toRightOf="@id/hotel_rate"
+                    app:layout_constraintTop_toTopOf="@id/hotel_rate" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/hotel_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/hotel_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rate_panel" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/location"
+                android:textColor="#0D72FF"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotel_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/about_the_trip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            app:layout_constraintTop_toBottomOf="@id/short_info_panel">
+
+            <LinearLayout
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/departure_from"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/st_petersburg"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/country_city"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/egypt_xurgada"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/dates"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/_19_09_2023_27_09_2023"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/nights_count"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/night_7"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/hotel"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/hotel_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/room"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/room_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/food"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/all_inclusive"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buyer_information_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/about_the_trip">
+
+            <TextView
+                android:id="@+id/buyer_information"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/buyer_information"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:labelFor="@id/buyer_phone_number"
+                android:text="@string/phone_number"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_9ssp"
+                android:translationZ="@dimen/_1sdp"
+                app:layout_constraintLeft_toLeftOf="@id/buyer_phone_number"
+                app:layout_constraintTop_toTopOf="@id/buyer_phone_number" />
+
+            <EditText
+                android:id="@+id/buyer_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingTop="@dimen/_19sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/example_phone_number"
+                android:textColor="#14142B"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyer_information"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:labelFor="@id/buyer_phone_number"
+                android:text="@string/email"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_9ssp"
+                android:translationZ="@dimen/_1sdp"
+                app:layout_constraintLeft_toLeftOf="@id/buyer_email"
+                app:layout_constraintTop_toTopOf="@id/buyer_email" />
+
+            <EditText
+                android:id="@+id/buyer_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingTop="@dimen/_19sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/example_email"
+                android:textColor="#14142B"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyer_phone_number"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/sfprodisplay_regular"
+                android:text="@string/about_security"
+                android:textColor="#828796"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyer_email" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tourist_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/buyer_information_panel">
+
+            <TextView
+                android:id="@+id/first_tourist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/tourist_1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/arrow_to_top"
+                app:layout_constraintBottom_toBottomOf="@id/first_tourist"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/first_tourist" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:labelFor="@id/lastname_tourist1"
+                android:text="@string/lastname"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_9ssp"
+                android:translationZ="@dimen/_1sdp"
+                app:layout_constraintLeft_toLeftOf="@id/lastname_tourist1"
+                app:layout_constraintTop_toTopOf="@id/lastname_tourist1" />
+
+            <EditText
+                android:id="@+id/lastname_tourist1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingTop="@dimen/_19sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/sample_tourist_lastname"
+                android:textColor="#14142B"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/first_tourist"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:labelFor="@id/firstname_tourist1"
+                android:text="@string/firstname"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_9ssp"
+                android:translationZ="@dimen/_1sdp"
+                app:layout_constraintLeft_toLeftOf="@id/firstname_tourist1"
+                app:layout_constraintTop_toTopOf="@id/firstname_tourist1" />
+
+            <EditText
+                android:id="@+id/firstname_tourist1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingTop="@dimen/_19sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/sample_tourist_firstname"
+                android:textColor="#14142B"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lastname_tourist1"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/date_of_birth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:paddingVertical="@dimen/_12sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/date_of_birth"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstname_tourist1"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/nationality"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingVertical="@dimen/_12sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/nationality"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_of_birth"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/number_of_passport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingVertical="@dimen/_12sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/number_of_passport"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nationality"
+                tools:ignore="RtlSymmetry,TextFields" />
+
+            <EditText
+                android:id="@+id/passport_validity_period"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingVertical="@dimen/_12sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="@string/passport_validity_period"
+                android:textColor="#A9ABB7"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number_of_passport"
+                tools:ignore="RtlSymmetry,TextFields" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tourist_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/tourist_1">
+
+            <TextView
+                android:id="@+id/second_tourist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/tourist_2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/arrow_to_bottom"
+                app:layout_constraintBottom_toBottomOf="@id/second_tourist"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/second_tourist" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_tourist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/tourist_2">
+
+            <TextView
+                android:id="@+id/adding_tourist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/add_tourist"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/plus"
+                app:layout_constraintBottom_toBottomOf="@id/adding_tourist"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/adding_tourist" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cost_of_tour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/panels_background"
+            android:paddingBottom="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/add_tourist">
+
+            <LinearLayout
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/tour"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:gravity="end"
+                        android:text="@string/_186_600"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/fuel_surcharge"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:gravity="end"
+                        android:text="@string/_9_300"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/service_surcharge"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:gravity="end"
+                        android:text="@string/_2_136"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_290sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/_115sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_regular"
+                        android:text="@string/to_pay"
+                        android:textColor="#828796"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:layout_width="@dimen/_175sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprodisplay_medium"
+                        android:gravity="end"
+                        android:text="@string/_198_036"
+                        android:textColor="#0D72FF"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/submit_reservation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@id/cost_of_tour">
+
+            <Button
+                android:id="@+id/to_pay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:background="@drawable/hotel_submit_background"
+                android:fontFamily="@font/sfprodisplay_medium"
+                android:text="@string/paying"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

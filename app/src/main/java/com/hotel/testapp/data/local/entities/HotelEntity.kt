@@ -20,7 +20,7 @@ data class HotelEntity(
 fun HotelResponse.toEntity(): HotelEntity = HotelEntity(
     id = id,
     aboutTheHotel = aboutTheHotel.toEntity(),
-    address = adress,
+    address = address,
     imageUrls = imageUrls,
     minimalPrice = minimalPrice,
     name = name,

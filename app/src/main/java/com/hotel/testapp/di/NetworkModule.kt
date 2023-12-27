@@ -61,7 +61,7 @@ class NetworkModule {
         okHttpClient: OkHttpClient
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl("https://run.mocky.io/v3")
+            .baseUrl("https://run.mocky.io/v3/")
             .addConverterFactory(converter)
             .addCallAdapterFactory(NetworkResponseAdapterFactory()).client(okHttpClient).build()
 

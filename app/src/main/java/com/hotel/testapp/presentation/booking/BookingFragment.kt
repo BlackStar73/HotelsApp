@@ -1,4 +1,4 @@
-package com.hotel.testapp.presentation.rooms
+package com.hotel.testapp.presentation.booking
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,18 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.hotel.testapp.R
-import com.hotel.testapp.databinding.FragmentRoomsBinding
+import com.hotel.testapp.databinding.FragmentBookingBinding
 
-class RoomsFragment : Fragment() {
-    private var _binding: FragmentRoomsBinding? = null
-
+class BookingFragment : Fragment() {
+    private var _binding: FragmentBookingBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRoomsBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentBookingBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -26,11 +26,11 @@ class RoomsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            toHotel.setOnClickListener {
-                findNavController().navigate(R.id.action_roomsFragment_to_hotelsFragment)
+            toRooms.setOnClickListener {
+                findNavController().navigate(R.id.action_bookingFragment_to_roomsFragment)
             }
-            roomReservation.setOnClickListener {
-                findNavController().navigate(R.id.action_roomsFragment_to_bookingFragment)
+            toPay.setOnClickListener {
+                findNavController().navigate(R.id.action_bookingFragment_to_orderFragment)
             }
         }
     }

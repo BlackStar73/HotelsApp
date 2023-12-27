@@ -6,22 +6,13 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class HotelResponse(
-    @SerialName("about_the_hotel")
-    val aboutTheHotel: HotelInfoResponse,
-    @SerialName("adress")
-    val adress: String,
-    @SerialName("id")
-    val id: Int,
-    @SerialName("image_urls")
-    val imageUrls: List<String>,
-    @SerialName("minimal_price")
-    val minimalPrice: Int,
-    @SerialName("name")
-    val name: String,
-    @SerialName("price_for_it")
-    val priceForIt: String,
-    @SerialName("rating")
-    val rating: Int,
-    @SerialName("rating_name")
-    val ratingName: String
+    @SerialName("id") var id: Int,
+    @SerialName("name") var name: String,
+    @SerialName("address") var address: String,
+    @SerialName("minimal_price") var minimalPrice: Int,
+    @SerialName("price_for_it") var priceForIt: String,
+    @SerialName("rating") var rating: Int,
+    @SerialName("rating_name") var ratingName: String,
+    @SerialName("image_urls") var imageUrls: ArrayList<String> = arrayListOf(),
+    @SerialName("about_the_hotel") var aboutTheHotel: HotelInfoResponse
 )

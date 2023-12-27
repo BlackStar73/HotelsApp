@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/hotelsFragment">
-
     <fragment
         android:id="@+id/hotelsFragment"
         android:name="com.hotel.testapp.presentation.hotels.HotelsFragment"
-        android:label="HotelsFragment" />
+        android:label="fragment_hotels"
+        tools:layout="@layout/fragment_hotels" >
+        <action
+            android:id="@+id/action_hotelsFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="com.hotel.testapp.presentation.rooms.RoomsFragment"
+        android:label="fragment_rooms"
+        tools:layout="@layout/fragment_rooms" >
+        <action
+            android:id="@+id/action_roomsFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+        <action
+            android:id="@+id/action_roomsFragment_to_hotelsFragment"
+            app:destination="@id/hotelsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.hotel.testapp.presentation.booking.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_bookingFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+        <action
+            android:id="@+id/action_bookingFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.hotel.testapp.presentation.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_orderFragment_to_hotelsFragment"
+            app:destination="@id/hotelsFragment" />
+        <action
+            android:id="@+id/action_orderFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
 </navigation>

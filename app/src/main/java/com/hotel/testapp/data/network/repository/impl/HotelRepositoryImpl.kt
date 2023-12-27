@@ -11,7 +11,7 @@ import javax.inject.Inject
 class HotelRepositoryImpl @Inject constructor(
     private val service: ApiService
 ) : HotelRepository {
-    override suspend fun getAllHotels(): NetworkResponse<HotelResponse, ErrorResponse> {
+    override suspend fun getAllHotels(): NetworkResponse<List<HotelResponse>, ErrorResponse> {
         return service.getHotels()
     }
 

@@ -7,9 +7,10 @@ import com.hotel.testapp.data.model.response.HotelResponse
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("/d144777c-a67f-4e35-867a-cacc3b827473")
-    suspend fun getHotels(): NetworkResponse<HotelResponse, ErrorResponse>
 
-    @GET("/8b532701-709e-4194-a41c-1a903af00195")
+    @GET("5fdbd99e-4453-43f8-8bb7-5190d9a77f10")
+    suspend fun getHotels(): NetworkResponse<List<HotelResponse>, ErrorResponse>
+
+    @GET("8b532701-709e-4194-a41c-1a903af00195")
     suspend fun getRooms(): NetworkResponse<AllRoomsResponse, ErrorResponse>
 }
